@@ -1,0 +1,15 @@
+# Exclude development and build artifacts from the published extension
+node_modules
+.vscode
+.vscode-test
+.gitignore
+.eslintrc.json
+tsconfig.json
+src/
+samples/
+*.log
+npm-debug.log*
+.github/
+.env
+.env.*
+.npmrc
