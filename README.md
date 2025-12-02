@@ -1,6 +1,10 @@
 # BACI C-- Support for VS Code
 
+[![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/robertbiv.baci-vscode)](https://marketplace.visualstudio.com/items?itemName=robertbiv.baci-vscode)
+
 Provides formatting and basic error diagnostics for BACI C-- (`*.cm`) files.
+
+**[Install from VS Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=robertbiv.baci-vscode)**
 
 ## Features
 - Syntax highlighting (basic TextMate grammar)
