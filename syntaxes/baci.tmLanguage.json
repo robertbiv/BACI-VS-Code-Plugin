@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "BACI C--",
+  "scopeName": "source.baci",
+  "patterns": [
+    {"name": "comment.line.double-slash.baci", "match": "//.*$"},
+    {"name": "comment.block.baci", "begin": "/\\*", "end": "\\*/"},
+    {"name": "string.quoted.double.baci", "begin": "\"", "end": "\""},
+    {"name": "keyword.control.baci", "match": "\\b(if|else|switch|case|for|while|do|break|continue|cobegin|atomic|monitor|init|void|int|char|string|typedef|const|extern|condition|waitc|signalc|p|v|wait|signal|initialsem|cout|cin|endl)\\b"},
+    {"name": "constant.numeric.baci", "match": "\\b[0-9]+\\b"},
+    {"name": "entity.name.function.baci", "match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\s*(?=\\()"}
+  ]
+}

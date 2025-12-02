@@ -1,0 +1,15 @@
+node_modules
+
+# Secrets and local configs
+.env
+.env.*
+.npmrc
+.vscode/*.code-workspace
+.vscode/settings.json
+
+# Build outputs
+/dist/
+
+# Logs
+npm-debug.log*
+*.log

@@ -1,0 +1,25 @@
+// BACI C-- sample for smoke testing diagnostics and quick fixes
+
+semaphore s = -1;         // error: semaphore must be non-negative
+binarysem b = 2;          // error: binarysem must be 0 or 1
+
+void helper() {
+  string name;            // error: string length must be declared
+  for (int i = 0; i < 3; i = i + 1) { // error: int declared in for header
+    cout << i << endl;
+  }
+}
+
+int notMain() {
+  cobegin {
+    helper();
+    cobegin { helper(); } // error: nested cobegin not allowed
+  }
+}
+
+// main is not last (error); Quick Fix will move it to end
+void main() {
+  initialsem(s, -5);      // error: initialsem for semaphore must be non-negative
+  initialsem(b, 3);       // error: initialsem for binarysem must be 0 or 1
+  cout << "run" << endl;
+}

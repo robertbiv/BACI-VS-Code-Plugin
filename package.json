@@ -1,0 +1,56 @@
+{
+  "name": "baci-vscode",
+  "displayName": "BACI C-- Support",
+  "description": "Prettify and show errors for BACI C-- (*.cm) files: formatting + diagnostics.",
+  "version": "0.0.1",
+  "publisher": "yoshi",
+  "engines": {"vscode": "^1.85.0"},
+  "categories": ["Programming Languages", "Linters", "Formatters"],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "languages": [{"id": "baci", "aliases": ["BACI", "C--"], "extensions": [".cm"], "configuration": "./language-configuration.json"}],
+    "grammars": [{"language": "baci", "scopeName": "source.baci", "path": "./syntaxes/baci.tmLanguage.json"}],
+    "commands": [{"command": "baci-vscode.formatDocument", "title": "BACI: Format Document"}],
+    "configuration": {
+      "title": "BACI C--",
+      "properties": {
+        "baci.defaultStringLength": {
+          "type": "number",
+          "default": 20,
+          "minimum": 1,
+          "description": "Default length used by quick fix when declaring string length."
+        },
+        "baci.format.spaceAroundOperators": {
+          "type": "boolean",
+          "default": true,
+          "description": "Insert spaces around operators (=,+,-,*,/,<<,>>)."
+        },
+        "baci.format.indentSize": {
+          "type": "number",
+          "default": 2,
+          "minimum": 1,
+          "description": "Indent size in spaces for braces and blocks."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "lint": "eslint . --ext .ts",
+    "package": "vsce package",
+    "test": "echo 'No tests yet'"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.0",
+    "@types/vscode": "^1.85.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.6.3",
+    "@vscode/vsce": "^3.0.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0"
+  },
+  "license": "MIT"
+}
