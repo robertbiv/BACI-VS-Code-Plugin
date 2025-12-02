@@ -8,6 +8,8 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -15,6 +17,14 @@ jobs:
           node-version: '20'
       - run: npm install
       - run: npm run build
-      - run: npx @vscode/vsce publish
+      - name: Package extension
+        run: npx @vscode/vsce package
+      - name: Publish to Marketplace
+        run: npx @vscode/vsce publish
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: '*.vsix'
+          generate_release_notes: true
