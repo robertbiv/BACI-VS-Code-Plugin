@@ -6,6 +6,24 @@ Provides formatting and basic error diagnostics for BACI C-- (`*.cm`) files.
 
 **[Install from VS Code Marketplace →](https://marketplace.visualstudio.com/items?itemName=robertbiv.baci-vscode)**
 
+## Installation
+
+**From VS Code Marketplace:**
+- Open VS Code → Extensions (Ctrl+Shift+X) → Search "BACI C--" → Install
+
+**From Command Line:**
+```pwsh
+code --install-extension robertbiv.baci-vscode
+```
+
+**Manual Install (Offline):**
+1. Download the latest `.vsix` from [GitHub Releases](https://github.com/robertbiv/BACI-VS-Code-Plugin/releases)
+2. Install via command line:
+   ```pwsh
+   code --install-extension baci-vscode-0.1.0.vsix
+   ```
+3. Or in VS Code: Extensions → `...` menu → Install from VSIX
+
 ## Features
 - Syntax highlighting (basic TextMate grammar)
 - Diagnostics for common BACI rules:
